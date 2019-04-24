@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - name: confirm javac is executable
+      command: /usr/local/openjdk/bin/javac --version
+    - name: confirm java is executable
+      command: /usr/local/openjdk/bin/java --version

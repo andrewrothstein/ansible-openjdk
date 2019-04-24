@@ -1,0 +1,11 @@
+---
+# vars file for openjdk
+openjdk_ver: '{{ openjdk_major_ver }}.{{ openjdk_minor_ver }}.{{ openjdk_patch_ver }}'
+openjdk_tgz: openjdk-{{ openjdk_ver }}_{{ openjdk_platform }}_bin.tar.gz
+openjdk_nonsense: '{{ openjdk_nonsenses[openjdk_ver] }}'
+openjdk_checksum: '{{ openjdk_checksums[openjdk_ver][openjdk_platform] }}'
+openjdk_tgz_url: '{{ openjdk_mirror}}/jdk{{ openjdk_ver }}/{{ openjdk_nonsense }}/{{ openjdk_major_ver }}/GPL/{{ openjdk_tgz }}'
+
+openjdk_install_dir: '{{ openjdk_parent_install_dir }}/openjdks'
+openjdk_install_link: '{{ openjdk_parent_install_dir }}/openjdk'
+openjdk_install_subdir: '{{ openjdk_install_dir }}/jdk-{{ openjdk_ver }}'

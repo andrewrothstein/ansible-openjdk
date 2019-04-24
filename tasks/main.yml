@@ -1,0 +1,70 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: mkdir openjdks install dir
+  become: yes
+  become_user: root
+  file:
+    path: '{{ openjdk_install_dir }}'
+    state: directory
+    mode: 0755
+- name: check for openjdk installation
+  become: yes
+  become_user: root
+  stat:
+    path: '{{ openjdk_install_subdir }}'
+  changed_when: false
+  register: openjdk_binary
+- when: not openjdk_binary.stat.exists
+  block:
+    - name: download archive
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ openjdk_tgz_url }}'
+        dest: /tmp/{{ openjdk_tgz }}
+        checksum: '{{ openjdk_checksum }}'
+        mode: 0644
+    - name: unarchive
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ openjdk_tgz }}
+        dest: '{{ openjdk_install_dir }}'
+        creates: '{{ openjdk_install_subdir }}'
+  always:
+    - name: delete archive
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ openjdk_tgz }}
+        state: absent
+- name: link...
+  become: yes
+  become_user: root
+  file:
+    src: '{{ openjdk_install_subdir }}'
+    dest: '{{ openjdk_install_link }}'
+    state: link
+- name: add to default path and ease systemd integration...
+  become: yes
+  become_user: root
+  with_items:
+    - f: openjdk.sh
+      d: /etc/profile.d
+    - f: openjdk.env
+      d: '{{ openjdk_install_subdir }}'
+  template:
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m | default("0644") }}'
+    
