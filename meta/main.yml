@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: openjdk
   author: Andrew Rothstein
   description: install openjdk
   company: BlueMountain Capital
