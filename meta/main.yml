@@ -20,9 +20,6 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - all
-  - name: Alpine
-    versions:
-    - all
   - name: Archlinux
     versions:
     - all
