@@ -2,13 +2,14 @@
 # defaults file for openjdk
 openjdk_mirror: https://github.com/AdoptOpenJDK
 
-openjdk_major_ver: 12
-openjdk_minor_ver: 0
-openjdk_patch_ver: 1
-openjdk_b_ver: 12
-
 openjdk_os: linux
 openjdk_arch: x64
+
+openjdk_ver:
+  major: 12
+  minor: 0
+  patch: 1
+  b: 12
 
 # jre or jdk?
 #openjdk_app: jdk
