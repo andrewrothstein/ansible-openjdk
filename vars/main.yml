@@ -1,11 +1,17 @@
 ---
 # vars file for openjdk
-openjdk_ver: '{{ openjdk_major_ver }}.{{ openjdk_minor_ver }}.{{ openjdk_patch_ver }}'
-openjdk_tgz: openjdk-{{ openjdk_ver }}_{{ openjdk_platform }}_bin.tar.gz
-openjdk_nonsense: '{{ openjdk_nonsenses[openjdk_ver] }}'
-openjdk_checksum: '{{ openjdk_checksums[openjdk_ver][openjdk_platform] }}'
-openjdk_tgz_url: '{{ openjdk_mirror}}/jdk{{ openjdk_ver }}/{{ openjdk_nonsense }}/{{ openjdk_major_ver }}/GPL/{{ openjdk_tgz }}'
+openjdk_ver_str: '{% if openjdk_major_ver | int > 8 %}{{ openjdk_major_ver }}.{{ openjdk_minor_ver }}.{{ openjdk_patch_ver }}_{{ openjdk_b_ver }}{% else %}{{ openjdk_major_ver }}u{{ openjdk_minorver }}b{{ openjdk_b_ver }}{% endif %}'
 
-openjdk_install_dir: '{{ openjdk_parent_install_dir }}/openjdks'
-openjdk_install_link: '{{ openjdk_parent_install_dir }}/openjdk'
-openjdk_install_subdir: '{{ openjdk_install_dir }}/jdk-{{ openjdk_ver }}'
+openjdk_last_rpath: '{% if openjdk_major_ver | int > 8 %}jdk-{{ openjdk_major_ver }}.{{ openjdk_minor_ver }}.{{ openjdk_patch_ver }}%2B{{ openjdk_b_ver }}{% else %}jdk{{ openjdk_major_ver }}u{{ openjdk_minor_ver }}-b{{ openjdk_b_ver }}{% endif %}'
+openjdk_rpath: openjdk{{ openjdk_major_ver }}-binaries/releases/download/{{ openjdk_last_rpath }}
+
+openjdk_archive: OpenJDK{{ openjdk_major_ver}}U-{{ openjdk_app }}_{{ openjdk_arch }}_{{ openjdk_os }}_hotspot_{{ openjdk_ver_str }}.{{ openjdk_archive_type | default("tar.gz") }}
+
+openjdk_platform: '{{ openjdk_os }}_{{ openjdk_arch }}'
+openjdk_checksum: '{{ openjdk_checksums[openjdk_ver_str][openjdk_app][openjdk_platform] }}'
+openjdk_archive_url: '{{ openjdk_mirror}}/{{ openjdk_rpath }}/{{ openjdk_archive }}'
+
+openjdk_install_dir: '{{ openjdk_parent_install_dir }}/openjdk'
+openjdk_install_subdir: '{{ openjdk_install_dir }}/{% if openjdk_major_ver | int > 8 %}jdk-{{ openjdk_major_ver }}.{{ openjdk_minor_ver }}.{{ openjdk_patch_ver }}+{{ openjdk_b_ver }}{% if openjdk_app == "jre" %}-jre{% endif %}{% else %}jdk{{ openjdk_major_ver }}u{{ openjdk_minor_ver }}-b{{ openjdk_b_ver }}{% if openjdk_app == "jre" %}-jre{% endif %}{% endif %}'
+
+openjdk_install_link: '{{ openjdk_parent_install_dir }}/openjdk-{{ openjdk_app }}'

@@ -29,8 +29,8 @@
       become: yes
       become_user: root
       get_url:
-        url: '{{ openjdk_tgz_url }}'
-        dest: /tmp/{{ openjdk_tgz }}
+        url: '{{ openjdk_archive_url }}'
+        dest: /tmp/{{ openjdk_archive }}
         checksum: '{{ openjdk_checksum }}'
         mode: 0644
     - name: unarchive
@@ -38,7 +38,7 @@
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ openjdk_tgz }}
+        src: /tmp/{{ openjdk_archive }}
         dest: '{{ openjdk_install_dir }}'
         creates: '{{ openjdk_install_subdir }}'
   always:
@@ -46,7 +46,7 @@
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ openjdk_tgz }}
+        path: /tmp/{{ openjdk_archive }}
         state: absent
 - name: link...
   become: yes

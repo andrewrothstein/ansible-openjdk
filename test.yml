@@ -2,8 +2,16 @@
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
+      openjdk_app: jre
+  tasks:
+    - name: confirm java is executable
+      command: /usr/local/openjdk-jre/bin/java --version
+- hosts: all
+  roles:
+    - role: '{{ playbook_dir }}'
+      openjdk_app: jdk
   tasks:
     - name: confirm javac is executable
-      command: /usr/local/openjdk/bin/javac --version
+      command: /usr/local/openjdk-jdk/bin/javac --version
     - name: confirm java is executable
-      command: /usr/local/openjdk/bin/java --version
+      command: /usr/local/openjdk-jdk/bin/java --version
