@@ -10,93 +10,91 @@ MIRROR=https://github.com/AdoptOpenJDK
 dl()
 {
     # 8, 11, 12
-    MAJORVER=$1
+    local majorver=$1
 
     # 212, 0, 0
-    MINORVER=$2
+    local minorver=$2
 
     # N/A, 3, 1
-    PATCHVER=$3
+    local patchver=$3
 
     # 04, 7, 12
-    BVER=$4
+    local bver=$4
 
     # jdk
-    APP=$5
+    local app=$5
 
     # linux
-    OS=$6
+    local os=$6
 
     # x64
-    ARCH=$7
+    local arch=$7
 
     # zip or tar.gz
-    ARCHIVETYPE=$8
+    local archivetype=$8
 
-    if [ $MAJORVER -ge 9 ]
+    if [ $majorver -ge 9 ]
     then
-        VERSTR=${MAJORVER}.${MINORVER}.${PATCHVER}_${BVER}
-        LASTRPATH=jdk-${MAJORVER}.${MINORVER}.${PATCHVER}%2B${BVER}
+        local verstr=${majorver}.${minorver}.${patchver}_${bver}
+        local lastrpath=jdk-${majorver}.${minorver}.${patchver}%2B${bver}
     else
-        VERSTR=${MAJORVER}u${MINORVER}b${BVER}.${ARCHIVETYPE}
-        LASTRPATH=jdk${MAJORVER}u${MINORVER}-b${BVER}
+        local verstr=${majorver}u${minorver}b${bver}
+        local lastrpath=jdk${majorver}u${minorver}-b${bver}
     fi
-    FILE=OpenJDK${MAJORVER}U-${APP}_${ARCH}_${OS}_hotspot_${VERSTR}.${ARCHIVETYPE}
-    RPATH=openjdk${MAJORVER}-binaries/releases/download/$LASTRPATH
-    CHECKSUMS=${FILE}.sha256.txt
+    local file=OpenJDK${majorver}U-${app}_${arch}_${os}_hotspot_${verstr}.${archivetype}
+    local rpath=openjdk${majorver}-binaries/releases/download/$lastrpath
+    local checksums=${file}.sha256.txt
 
-    RFILEURL=$MIRROR/$RPATH/$FILE
-    RCHECKSUMSURL=$MIRROR/$RPATH/$CHECKSUMS
-    LCHECKSUMS=$DIR/$CHECKSUMS
+    local rfileurl=$MIRROR/$rpath/$file
+    local rchecksumsurl=$MIRROR/$rpath/$checksums
+    local lchecksums=$DIR/$checksums
 
-    if [ ! -e $LCHECKSUMS ];
+    if [ ! -e $lchecksums ];
     then
-        wget -q -O $LCHECKSUMS $RCHECKSUMSURL
+        wget -q -O $lchecksums $rchecksumsurl
     fi
 
-    printf "      # %s\n" $RFILEURL
-    printf "      %s_%s: sha256:%s\n" $OS $ARCH `fgrep $FILE $LCHECKSUMS | awk '{print $1}'`
+    printf "      # %s\n" $rfileurl
+    printf "      %s_%s: sha256:%s\n" $os $arch `fgrep $file $lchecksums | awk '{print $1}'`
 }
 
 dlall() {
     # 8, 11, 12
-    MAJORVER=$1
+    local majorver=$1
     # 212, 0, 12
-    MINORVER=$2
+    local minorver=$2
 
     # N/A, 3, 0
-    PATCHVER=$3
+    local patchver=$3
 
     # 04, 7, 12
-    BVER=$4
+    local bver=$4
 
 
-    if [ $MAJORVER -ge 9 ]
+    if [ $majorver -ge 9 ]
     then
-        printf "  '%s.%s.%sB%s':\n" $MAJORVER $MINORVER $PATCHVER $BVER
+        printf "  '%s.%s.%s_%s':\n" $majorver $minorver $patchver $bver
     else
-        printf "  '%su%s_%s':\n" $MAJORVER $MINORVER $BVER
+        printf "  '%su%s_%s':\n" $majorver $minorver $bver
     fi
     printf "    %s:\n" jdk
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk linux x64 tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk linux ppc64le tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk linux s390x tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk mac x64 tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk windows x64 zip
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk windows x86-32 zip
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jdk aix ppc64 tar.gz
+    dl $majorver $minorver $patchver $bver jdk linux x64 tar.gz
+    dl $majorver $minorver $patchver $bver jdk linux ppc64le tar.gz
+    dl $majorver $minorver $patchver $bver jdk linux s390x tar.gz
+    dl $majorver $minorver $patchver $bver jdk mac x64 tar.gz
+    dl $majorver $minorver $patchver $bver jdk windows x64 zip
+    dl $majorver $minorver $patchver $bver jdk windows x86-32 zip
 
     printf "    %s:\n" jre
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre linux x64 tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre linux ppc64le tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre linux s390x tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre mac x64 tar.gz
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre windows x64 zip
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre windows x86-32 zip
-    dl $MAJORVER $MINORVER $PATCHVER $BVER jre aix ppc64 tar.gz
+    dl $majorver $minorver $patchver $bver jre linux x64 tar.gz
+    dl $majorver $minorver $patchver $bver jre linux ppc64le tar.gz
+    dl $majorver $minorver $patchver $bver jre linux s390x tar.gz
+    dl $majorver $minorver $patchver $bver jre mac x64 tar.gz
+    dl $majorver $minorver $patchver $bver jre windows x64 zip
+    dl $majorver $minorver $patchver $bver jre windows x86-32 zip
 }
 
 dlall 8 212 'N/A' '04'
 dlall 11 0 3 7
 dlall 12 0 1 12
-
+dlall 13 0 1 9
