@@ -5,8 +5,8 @@
       openjdk_app: jre
       openjdk_ver:
         major: 8
-        minor: 212
-        b: '04'
+        minor: 232
+        b: '09'
   tasks:
     - name: confirm java is executable
       command: /usr/local/openjdk-jre/bin/java -version
@@ -16,8 +16,8 @@
       openjdk_app: jdk
       openjdk_ver:
         major: 8
-        minor: 212
-        b: '04'
+        minor: 232
+        b: '09'
   tasks:
     - name: confirm javac is executable
       command: /usr/local/openjdk-jdk/bin/javac -version

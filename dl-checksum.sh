@@ -75,7 +75,7 @@ dlall() {
     then
         printf "  '%s.%s.%s_%s':\n" $majorver $minorver $patchver $bver
     else
-        printf "  '%su%s_%s':\n" $majorver $minorver $bver
+        printf "  '%su%sb%s':\n" $majorver $minorver $bver
     fi
     printf "    %s:\n" jdk
     dl $majorver $minorver $patchver $bver jdk linux x64 tar.gz
@@ -95,6 +95,7 @@ dlall() {
 }
 
 dlall 8 212 'N/A' '04'
+dlall 8 232 'N/A' '09'
 dlall 11 0 3 7
 dlall 12 0 1 12
 dlall 13 0 1 9
