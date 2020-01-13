@@ -96,6 +96,6 @@ dlall() {
 
 dlall 8 212 'N/A' '04'
 dlall 8 232 'N/A' '09'
-dlall 11 0 3 7
-dlall 12 0 1 12
+dlall 11 0 5 10
+dlall 12 0 2 10
 dlall 13 0 1 9
