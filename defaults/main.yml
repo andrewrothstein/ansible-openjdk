@@ -133,7 +133,7 @@ openjdk_checksums:
       windows_x64: sha256:3f9e3e4256cb2c1b63b56864dca248d7f406874b21e859e5ac7ba7ada989eceb
       # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jre_x86-32_windows_hotspot_11.0.5_10.zip
       windows_x86-32: sha256:f3a7bac17e92170d96a7a5169b4a8c1e7acc9b00254f937b40f4fdf47c885040
- '12.0.1_12':
+  '12.0.1_12':
     jdk:
       # https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jdk_x64_linux_hotspot_12.0.1_12.tar.gz
       linux_x64: sha256:dd3fdf3771a05a010029c1cf1aef516928eab55d6f5eb019008875e9ccbc8337
