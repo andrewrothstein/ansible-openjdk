@@ -75,6 +75,33 @@ openjdk_checksums:
       windows_x64: sha256:3e56345e39d5ee04cae8d9a253d2529f553b14041a22c23fb2730504015202a9
       # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_x86-32_windows_hotspot_8u232b09.zip
       windows_x86-32: sha256:d75fe844374c6ee76150c2b5047f492870c0a2f21586506f04095fcbe513c953
+  '8u242b08':
+    jdk:
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz
+      linux_x64: sha256:f39b523c724d0e0047d238eb2bb17a9565a60574cf651206c867ee5fc000ab43
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u242b08.tar.gz
+      linux_ppc64le: sha256:72f42c2014cb29a2fcd71b1a678af3ed148358a8f9b7d741a5da88cb178d9c53
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_s390x_linux_hotspot_8u242b08.tar.gz
+      linux_s390x: sha256:98f7217dc4acc6bc8b474a2009922b51767d84c045f95a16ee0b9216467ba2de
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_mac_hotspot_8u242b08.tar.gz
+      mac_x64: sha256:06675b7d65bce0313ee1f2e888dd44267e8afeced75e0b39b5ad1f5fdff54e0b
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_windows_hotspot_8u242b08.zip
+      windows_x64: sha256:8288e4d0983019706db89c153d18bfce28d033f646be65c8ae1c33c6c65b943e
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x86-32_windows_hotspot_8u242b08.zip
+      windows_x86-32: sha256:83d288a9c8674b1ebafbab5783c79e0532267cef8c0ecbff48a4fb46f2a6713d
+    jre:
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_x64_linux_hotspot_8u242b08.tar.gz
+      linux_x64: sha256:5edfaefdbb0469d8b24d61c8aef80c076611053b1738029c0232b9a632fe2708
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_ppc64le_linux_hotspot_8u242b08.tar.gz
+      linux_ppc64le: sha256:0b34b855a205d7c00b6625075884b48f6b9fafe3288397116896c39a39220b74
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_s390x_linux_hotspot_8u242b08.tar.gz
+      linux_s390x: sha256:a0e122c7ecd1cb8968cb4000923292db210fc7463f2ba4d764912de2e2489d15
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_x64_mac_hotspot_8u242b08.tar.gz
+      mac_x64: sha256:fae3777e3441dc7384c339a9054aa7efc40cd2c501625a535c2d4648367ccca3
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_x64_windows_hotspot_8u242b08.zip
+      windows_x64: sha256:b00c361e6ce022c6dc63b7c747cfdd9d28c17943e50bc1855adf36854ce46898
+      # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_x86-32_windows_hotspot_8u242b08.zip
+      windows_x86-32: sha256:d601ea517a0dab3358dfac44158ca3cdbc8aeab3023ef00fb3cc0b571e5a5e33      
   '11.0.3_7':
     jdk:
       # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.3_7.tar.gz

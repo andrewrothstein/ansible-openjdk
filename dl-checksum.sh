@@ -4,6 +4,7 @@ MIRROR=https://github.com/AdoptOpenJDK
 
 # examples
 # https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jdk_x64_linux_hotspot_8u212b04.tar.gz.sha256.txt
+# https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz.sha256.txt
 # https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9.0.4%2B11/OpenJDK9U-jdk_x64_linux_hotspot_9.0.4_11.tar.gz.sha256.txt
 # https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_x64_linux_hotspot_12.0.1_12.tar.gz.sha256.txt
 
@@ -96,6 +97,7 @@ dlall() {
 
 #dlall 8 212 'N/A' '04'
 #dlall 8 232 'N/A' '09'
+dlall 8 242 'N/A' '08'
 #dlall 11 0 5 10
 #dlall 12 0 2 10
-dlall 13 0 2 8
+#dlall 13 0 2 8
