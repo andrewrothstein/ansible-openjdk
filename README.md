@@ -28,6 +28,27 @@ Example Playbook
     - andrewrothstein.openjdk
 ```
 
+More complex examples, with a specific version of Java and a choice between JRE and JDK
+
+```yml
+- hosts: servers
+  roles:
+    - role: andrewrothstein.openjdk
+      openjdk_app: jre
+      openjdk_ver:
+        major: 8
+        minor: 242
+        b: '08'
+    - role: andrewrothstein.openjdk
+      openjdk_app: jdk
+      openjdk_ver:
+        major: 11
+        minor: 0
+        patch: 8
+        b: 10
+```
+
+
 License
 -------
 
