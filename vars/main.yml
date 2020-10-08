@@ -6,6 +6,7 @@ openjdk_last_rpath: '{% if openjdk_ver.major | int > 8 %}jdk-{{ openjdk_ver.majo
 openjdk_rpath: openjdk{{ openjdk_ver.major }}-binaries/releases/download/{{ openjdk_last_rpath }}
 
 openjdk_archive: OpenJDK{{ openjdk_ver.major}}U-{{ openjdk_app }}_{{ openjdk_arch }}_{{ openjdk_os }}_hotspot_{{ openjdk_ver_str }}.{{ openjdk_archive_type | default("tar.gz") }}
+openjdk_tmp_archive: /tmp/{{ openjdk_archive }}
 
 openjdk_platform: '{{ openjdk_os }}_{{ openjdk_arch }}'
 openjdk_checksum: '{{ openjdk_checksums[openjdk_ver_str][openjdk_app][openjdk_platform] }}'
