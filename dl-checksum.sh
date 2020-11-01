@@ -95,8 +95,9 @@ dlall() {
     dl $majorver $minorver $patchver $bver jre windows x86-32 zip
 }
 
-dlall 8 272 'N/A' '10'
+#dlall 8 272 'N/A' '10'
 #dlall 11 0 8 10
 #dlall 12 0 2 10
 #dlall 13 0 2 8
 #dlall 14 0 2 12
+dlall 15 0 1 9
