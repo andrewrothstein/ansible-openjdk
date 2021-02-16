@@ -8,8 +8,8 @@ openjdk_arch: x64
 openjdk_ver:
   major: 15
   minor: 0
-  patch: 1
-  b: 9
+  patch: 2
+  b: 7
 
 # jre or jdk?
 #openjdk_app: jdk
@@ -488,3 +488,57 @@ openjdk_checksums:
       windows_x64: sha256:36d1a96412fd04e951e7c2a57510439458b3776fe0b3b211b82220723bace808
       # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.1%2B9/OpenJDK15U-jre_x86-32_windows_hotspot_15.0.1_9.zip
       windows_x86-32: sha256:9f334280b6a56095a9f3b0e46ca7b0abfb2e7b3e1d5458c0ef8c0817f40bd5db
+  '11.0.10_9':
+    jdk:
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz
+      linux_x64: sha256:ae78aa45f84642545c01e8ef786dfd700d2226f8b12881c844d6a1f71789cb99
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.10_9.tar.gz
+      linux_ppc64le: sha256:e1d130a284f0881893711f17df83198d320c16f807de823c788407af019b356b
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.10_9.tar.gz
+      linux_s390x: sha256:b55e5d774bcec96b7e6ffc8178a17914ab151414f7048abab3afe3c2febb9a20
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x64_mac_hotspot_11.0.10_9.tar.gz
+      mac_x64: sha256:ee7c98c9d79689aca6e717965747b8bf4eec5413e89d5444cc2bd6dbd59e3811
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x64_windows_hotspot_11.0.10_9.zip
+      windows_x64: sha256:d92722551cb6ff9b8a63c12a92d7ccacfd4c17e9159f6c7eb427a3a776049af8
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x86-32_windows_hotspot_11.0.10_9.zip
+      windows_x86-32: sha256:6fbe2c6256db7dff9f46fa7d18133e9cd8010ef24199e1846376c78ea3dce8e4
+    jre:
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.10_9.tar.gz
+      linux_x64: sha256:25fdcf9427095ac27c8bdfc82096ad2e615693a3f6ea06c700fca7ffb271131a
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.10_9.tar.gz
+      linux_ppc64le: sha256:d269b646af32eb41d74b3a5259f634921a063c67642ab5c227142463824b2a6d
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.10_9.tar.gz
+      linux_s390x: sha256:2c9ec28b10bf1628b20a157c746988f323e0dcbf1053b616aa6593923e3a70df
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_x64_mac_hotspot_11.0.10_9.tar.gz
+      mac_x64: sha256:215e94323d7c74fe31e5383261e3bfc8e9ca3dc03212738c48d29868b02fe875
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_x64_windows_hotspot_11.0.10_9.zip
+      windows_x64: sha256:bab0d47f4764520a96890d00ef5f27d3eb350f77e8dd15e6adf560993fb12595
+      # https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jre_x86-32_windows_hotspot_11.0.10_9.zip
+      windows_x86-32: sha256:bfeef4db7942f920d3f08ff7cf6a618728df6c0dcdf23323ea68f33f912ce881
+  '15.0.2_7':
+    jdk:
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_x64_linux_hotspot_15.0.2_7.tar.gz
+      linux_x64: sha256:94f20ca8ea97773571492e622563883b8869438a015d02df6028180dd9acc24d
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_ppc64le_linux_hotspot_15.0.2_7.tar.gz
+      linux_ppc64le: sha256:486f2aad94c5580c0b27c9007beebadfccd4677c0bd9565a77ca5c34af5319f9
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_s390x_linux_hotspot_15.0.2_7.tar.gz
+      linux_s390x: sha256:7dc35a8a4ba1ccf6cfe96fcf26e09ed936f1802ca668ca6bf708e2392c35ab6a
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_x64_mac_hotspot_15.0.2_7.tar.gz
+      mac_x64: sha256:d358a7ff03905282348c6c80562a4da2e04eb377b60ad2152be4c90f8d580b7f
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_x64_windows_hotspot_15.0.2_7.zip
+      windows_x64: sha256:b80dde2b7f8374eff0f1726c1cbdb48fb095fdde21489046d92f7144baff5741
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_x86-32_windows_hotspot_15.0.2_7.zip
+      windows_x86-32: sha256:22e914d85a102364ea3eb1963ce21ef4a8946eb7626632755dc8c092df065df0
+    jre:
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_x64_linux_hotspot_15.0.2_7.tar.gz
+      linux_x64: sha256:31af7efdb1cc0ffd001bc145c3d255266889ad6b502133283ae8bf233d11334c
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_ppc64le_linux_hotspot_15.0.2_7.tar.gz
+      linux_ppc64le: sha256:dc2480948ac3e6b192fb77c9d37227510f44482e52a330002d6e7497a62a7d67
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_s390x_linux_hotspot_15.0.2_7.tar.gz
+      linux_s390x: sha256:93d81a245f70373a459fe4b1c99c8fb7f357de5c8a14a127f580704270037054
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_x64_mac_hotspot_15.0.2_7.tar.gz
+      mac_x64: sha256:6a7150fa3ca8277394ff5bae6f56a70f61d2144a5dbbea4f008d86a3e5498795
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_x64_windows_hotspot_15.0.2_7.zip
+      windows_x64: sha256:d192e9a4ffeeaf5dbcd6cabe40588dcb806d3b315eec0a1361c7a2ec7867d80c
+      # https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jre_x86-32_windows_hotspot_15.0.2_7.zip
+      windows_x86-32: sha256:57b3b5a81fdd0d57cba20d3efe4e930a5eb09b5c63f8d1b836d248674de03368
