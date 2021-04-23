@@ -1,0 +1,11 @@
+---
+- name: confirm javac is executable
+  command: /usr/local/openjdk-jdk/bin/javac -version
+  register: openjdk_jdk_test_output
+- name: javac -version (stdout)
+  debug:
+    msg: '{{ openjdk_jdk_test_output.stdout }}'
+- name: javac -version (stderr)
+  debug:
+    msg: '{{ openjdk_jdk_test_output.stderr }}'
+- import_tasks: test-jre-exe.yml

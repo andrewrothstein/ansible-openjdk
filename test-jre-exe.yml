@@ -1,0 +1,7 @@
+---
+- name: confirm java is executable
+  command: /usr/local/openjdk-jdk/bin/java -version
+  register: openjdk_jre_test_output
+- name: java -version
+  debug:
+    msg: '{{ openjdk_jre_test_output.stderr }}'

@@ -5,24 +5,20 @@
       openjdk_app: jre
       openjdk_ver:
         major: 8
-        minor: 282
-        b: '08'
+        minor: 292
+        b: '10'
   tasks:
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jre/bin/java -version
+    - import_tasks: test-jre-exe.yml
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
       openjdk_app: jdk
       openjdk_ver:
         major: 8
-        minor: 282
-        b: '08'
+        minor: 292
+        b: '10'
   tasks:
-    - name: confirm javac is executable
-      command: /usr/local/openjdk-jdk/bin/javac -version
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jdk/bin/java -version
+    - import_tasks: test-jdk-exe.yml
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
@@ -30,11 +26,10 @@
       openjdk_ver:
         major: 11
         minor: 0
-        patch: 8
-        b: 10
+        patch: 11
+        b: 9
   tasks:
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jre/bin/java --version
+    - import_tasks: test-jre-exe.yml
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
@@ -42,26 +37,19 @@
       openjdk_ver:
         major: 11
         minor: 0
-        patch: 8
-        b: 10
+        patch: 11
+        b: 9
   tasks:
-    - name: confirm javac is executable
-      command: /usr/local/openjdk-jdk/bin/javac --version
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jdk/bin/java --version
+    - import_tasks: test-jdk-exe.yml
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
       openjdk_app: jre
   tasks:
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jre/bin/java --version
+    - import_tasks: test-jre-exe.yml
 - hosts: all
   roles:
     - role: '{{ playbook_dir }}'
       openjdk_app: jdk
   tasks:
-    - name: confirm javac is executable
-      command: /usr/local/openjdk-jdk/bin/javac --version
-    - name: confirm java is executable
-      command: /usr/local/openjdk-jdk/bin/java --version
+    - import_tasks: test-jdk-exe.yml
