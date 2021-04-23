@@ -95,9 +95,12 @@ dlall() {
     dl $majorver $minorver $patchver $bver jre windows x86-32 zip
 }
 
-#dlall 8 282 'N/A' '08'
-dlall 11 0 10 9
+# https://adoptopenjdk.net/releases.html
+
+dlall 8 292 'N/A' '10'
+dlall 11 0 11 9
 #dlall 12 0 2 10
 #dlall 13 0 2 8
 #dlall 14 0 2 12
 #dlall 15 0 2 7
+dlall 16 0 1 9
