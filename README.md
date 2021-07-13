@@ -1,6 +1,6 @@
 andrewrothstein.openjdk
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-openjdk.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-openjdk)
+![Build Status](https://github.com/andrewrothstein/ansible-openjdk/actions/workflows/build.yml/badge.svg)
 
 Installs [AdoptOpenJDK](https://adoptopenjdk.net/)
 
