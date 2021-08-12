@@ -1,25 +1,26 @@
 #!/usr/bin/env sh
+set -ex
 DIR=~/Downloads
-MIRROR=https://github.com/AdoptOpenJDK
+MIRROR=https://github.com/adoptium
 
 # examples
-# https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jdk_x64_linux_hotspot_8u212b04.tar.gz.sha256.txt
-# https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz.sha256.txt
-# https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9.0.4%2B11/OpenJDK9U-jdk_x64_linux_hotspot_9.0.4_11.tar.gz.sha256.txt
-# https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_x64_linux_hotspot_12.0.1_12.tar.gz.sha256.txt
+# https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u302b08.tar.gz.sha256.txt
+# https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u302b08.tar.gz.sha256.txt
+# https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.12_7.tar.gz.sha256.txt
+# https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz.sha256.txt
 
 dl()
 {
-    # 8, 11, 12
+    # 8, 11, 16
     local majorver=$1
 
-    # 212, 0, 0
+    # 302, 0, 0
     local minorver=$2
 
-    # N/A, 3, 1
+    # N/A, 12, 2
     local patchver=$3
 
-    # 04, 7, 12
+    # 08, 7, 7
     local bver=$4
 
     # jdk
@@ -43,7 +44,7 @@ dl()
         local lastrpath=jdk${majorver}u${minorver}-b${bver}
     fi
     local file=OpenJDK${majorver}U-${app}_${arch}_${os}_hotspot_${verstr}.${archivetype}
-    local rpath=openjdk${majorver}-binaries/releases/download/$lastrpath
+    local rpath=temurin${majorver}-binaries/releases/download/$lastrpath
     local checksums=${file}.sha256.txt
 
     local rfileurl=$MIRROR/$rpath/$file
@@ -97,10 +98,6 @@ dlall() {
 
 # https://adoptopenjdk.net/releases.html
 
-#dlall 8 292 'N/A' '10'
-#dlall 11 0 11 9
-#dlall 12 0 2 10
-#dlall 13 0 2 8
-#dlall 14 0 2 12
-#dlall 15 0 2 7
-#dlall 16 0 1 9
+dlall 8 302 'N/A' '08'
+dlall 11 0 12 7
+dlall 16 0 2 7
