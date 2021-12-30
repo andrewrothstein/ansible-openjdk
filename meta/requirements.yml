@@ -1,0 +1,6 @@
+---
+roles:
+  - name: andrewrothstein.unarchive-deps
+    version: v1.2.3
+  - name: andrewrothstein.alpine-glibc-shim
+    version: v2.0.16
