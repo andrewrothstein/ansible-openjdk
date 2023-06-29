@@ -1,6 +1,4 @@
-dependencies:
-- andrewrothstein.unarchive-deps
-- andrewrothstein.alpine-glibc-shim
+---
 galaxy_info:
   author: Andrew Rothstein
   company: BlueMountain Capital
@@ -16,17 +14,18 @@ galaxy_info:
     - all
   - name: Debian
     versions:
+    - bookworm
     - bullseye
-    - buster
   - name: EL
     versions:
     - 8
+    - 9
   - name: Fedora
     versions:
-    - 34
-    - 35
+    - 37
+    - 38
   - name: Ubuntu
     versions:
-    - bionic
     - focal
+    - jammy
   role_name: openjdk

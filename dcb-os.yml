@@ -1,11 +1,10 @@
 ---
 - archlinux_latest
-- centos_8
+- debian_bookworm
 - debian_bullseye
-- debian_buster
-- fedora_34
-- fedora_35
-- rockylinux_8.4
-- rockylinux_8.5
-- ubuntu_bionic
+- fedora_37
+- fedora_38
+- rockylinux_8
+- rockylinux_9
 - ubuntu_focal
+- ubuntu_jammy
